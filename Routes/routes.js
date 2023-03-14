@@ -7,6 +7,8 @@ const {addbookLists,getallBooks,updateBook,deleteBook}=require("../Controller/bo
 const {addsalesLists, getallSales,updateSale,deleteSale}=require("../Controller/salescontroller")
 const{ addclientLists,getallClients}=require("../Controller/clientcontroller")
 const{ addcustomerLists,getallCustomers,updateCustomer,deleteCustomer}=require("../Controller/customercontroller")
+const addOrder=require("../Controller/ordercontroller")
+
 
 router.route("/login").post(login);
 router.route("/signup").post(signUp);
@@ -33,6 +35,9 @@ router.route("/addcustomer").post(addcustomerLists);
 router.route("/getallcustomers").get(getallCustomers);
 router.route("/updatecustomer").put(updateCustomer);
 router.route("/deletecust/:del").delete(deleteCustomer);
+
+
+router.route("/placeorder").post(addOrder);
 
 
 module.exports=router 
